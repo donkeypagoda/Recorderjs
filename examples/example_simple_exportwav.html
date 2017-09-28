@@ -4,10 +4,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Live input record and playback</title>
-  <style type='text/css'>
+  <style type="text/css">
     ul { list-style: none; }
     #recordingslist audio { display: block; margin-bottom: 10px; }
   </style>
+	<link rel="stylesheet" href="main.css">
 </head>
 <body>
 	<h1>Channel 1</h1>
@@ -38,13 +39,19 @@
   var recorder1;
 	var recorder2;
 	var chan1Enable = false;
-	var chan2Enable = false
+	var chan2Enable = false;
 
 	function enable(button){
-		if(button.id === "chan1Enable") chan1Enable = !chan1Enable;
-		console.log(chan1Enable);
-		if(button.id === "chan2Enable") chan2Enable = !chan2Enable;
-		console.log(chan2Enable);
+		if(button.id === "chan1Enable") {
+			chan1Enable = !chan1Enable;
+			console.log(button);
+			button.className="enabled"
+		}
+		if(button.id === "chan2Enable") {
+			chan2Enable = !chan2Enable;
+			console.log(button);
+			button.className="enabled"
+		}
 	}
 
   function startUserMedia(stream) {
