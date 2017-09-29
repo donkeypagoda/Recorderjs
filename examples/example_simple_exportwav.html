@@ -59,6 +59,7 @@
     var input = audio_context.createMediaStreamSource(stream);
     __log('Media stream created.');
 
+		// THIS IS WITH A GAIN NODE IS HOW THE MONITORING WOULD WORK
     // Uncomment if you want the audio to feedback directly
     // input.connect(audio_context.destination);
     // __log('Input connected to audio context destination.');
